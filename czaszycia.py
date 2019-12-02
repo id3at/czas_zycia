@@ -1,5 +1,5 @@
 """
-Autor: Tomasz Głuc
+Autor: id3at
 Program podaje czas zycia w sekundach minutach i dniach itd
 
 """
