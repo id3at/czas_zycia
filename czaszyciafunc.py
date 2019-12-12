@@ -40,10 +40,10 @@ def dat_uro(rok, miesiac, dzien):
 
     return f'''Masz już: {akczas.year-urodz.year} lat i {akczas.month - urodz.month} miesiecy.
 A to jest {wiekmies} miesiecy.
-A to jest {wiekdni.days} dni.
-A to jest {int(godziny)} godzin
-A to jest {int(minuty)} minut.
-A to jest {int(sek)} sekund'''
+A to jest {wiekdni.days:,} dni.
+A to jest {int(godziny):,} godzin
+A to jest {int(minuty):,} minut.
+A to jest {int(sek):,} sekund'''
 
 with open('czaszycia.txt', 'a')as t:
     t.write(dat_uro(rok, miesiac, dzien))
