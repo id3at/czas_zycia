@@ -32,8 +32,7 @@ while True:
 AKTUALNYCZAS = datetime.datetime.today()
 DATANARODZIN = datetime.datetime(ROK, MIESIAC, DZIEN)
 Wiek = AKTUALNYCZAS.year-DATANARODZIN.year
-wiekmies = (AKTUALNYCZAS.year - DATANARODZIN.year) * 12 + (AKTUALNYCZAS.month - DATANARODZIN.month)
-
+mies = AKTUALNYCZAS.month - DATANARODZIN.month
 kiedysto = 100 + DATANARODZIN.year
 
 
@@ -41,10 +40,20 @@ Wiekdelta = AKTUALNYCZAS - DATANARODZIN
 sek = Wiekdelta.total_seconds()
 min = sek/60
 godziny = min/60
+
+if mies < 0:
+    mies = 12 + int(mies)
+    Wiek = int(AKTUALNYCZAS.year-DATANARODZIN.year)-1
+
+wiekmies = (Wiek) * 12 + (mies)
+
+
+
 c = (f"""\n Witaj {IMIĘ} !! \n
 Jest: {AKTUALNYCZAS: %A, %d, %B, %Y}.
-Masz już: {Wiek} lat i {AKTUALNYCZAS.month - DATANARODZIN.month} miesiecy.
+Masz już: {Wiek} lat i {mies} miesiecy.
 A to znaczy, że przeżyles już {wiekmies:,} miesiecy
+a to jest {Wiekdelta.days // 7:,} tygodni,
 a to jest {Wiekdelta.days:,} dni,
 a to jest {int(godziny):,} godzin,
 a to jest {int(min):,} minut,
