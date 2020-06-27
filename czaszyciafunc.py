@@ -18,6 +18,7 @@ def czaszycia(IMIE="Tomasz", ROK=1983, MIESIAC=5, DZIEN=28):
     min = sek / 60
     godziny = min / 60
     przyszleur = urojony - AKTUALNYCZAS
+    resztatygodni = (Wiekdelta.days - ((Wiekdelta.days // 7) * 7) )
 
     if mies < 0:
         mies = 12 + int(mies)
@@ -29,7 +30,7 @@ def czaszycia(IMIE="Tomasz", ROK=1983, MIESIAC=5, DZIEN=28):
     Jest: {AKTUALNYCZAS: %A, %d, %B, %Y}.
     Masz już: {Wiek} lat i {mies} miesiecy.
     A to znaczy, że przeżyles już {wiekmies:,} miesiecy
-    a to jest {Wiekdelta.days // 7:,} tygodni,
+    a to jest {Wiekdelta.days // 7:,} tygodni i {resztatygodni} dni,
     a to jest {Wiekdelta.days:,} dni,
     a to jest {int(godziny):,} godzin,
     a to jest {int(min):,} minut,
