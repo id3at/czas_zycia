@@ -1,11 +1,18 @@
 """
 Autor: Tomasz Głuc
-Program podaje czas zycia w sekundach minutach i dniach itd
+Program pobiera dane czasu narodzin i zwraca
+informacje o długości zycia w sekundach minutach i dniach itd
 """
 
 import datetime
 
+
 def czaszycia(IMIE="Tomasz", ROK=1983, MIESIAC=5, DZIEN=28):
+    """
+    Autor: Tomasz Głuc
+    Funkcja zwraca informacje o czasie zycia w sekundach minutach i dniach itd
+    Uusniecie #, na końcu funkcji, umowżliwia zapisanie informacji w pliku
+    """
 
     AKTUALNYCZAS = datetime.datetime.today()
     DATANARODZIN = datetime.datetime(ROK, MIESIAC, DZIEN)
@@ -18,7 +25,7 @@ def czaszycia(IMIE="Tomasz", ROK=1983, MIESIAC=5, DZIEN=28):
     min = sek / 60
     godziny = min / 60
     przyszleur = urojony - AKTUALNYCZAS
-    resztatygodni = (Wiekdelta.days - ((Wiekdelta.days // 7) * 7) )
+    resztatygodni = (Wiekdelta.days - ((Wiekdelta.days // 7) * 7))
 
     if mies < 0:
         mies = 12 + int(mies)
